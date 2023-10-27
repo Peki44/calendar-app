@@ -84,7 +84,7 @@ const DayCell = ({ date, commits, currentMonth }) => {
 
   return (
     <div className={dayCellClasses}  onClick={toggleCommits}>
-      <div className="date">{format(date, 'd')}</div>
+      <div className="date">{isDayInCurrentMonth  ? format(date, 'd') : ''}</div>
       <div className="commitMessage">{dailyCommits.length > 0 && isDayInCurrentMonth  ? dailyCommits.length + " commits"  : ''} </div>
       {showCommits && (
         <div className='commits'>
